@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/ParameterLookUpWindowsFormsApplication/Form1.cs) (VB: [Form1.vb](./VB/ParameterLookUpWindowsFormsApplication/Form1.vb))
+* [Program.cs](./CS/ParameterLookUpWindowsFormsApplication/Program.cs) (VB: [Program.vb](./VB/ParameterLookUpWindowsFormsApplication/Program.vb))
+* [XtraReport1.cs](./CS/ParameterLookUpWindowsFormsApplication/XtraReport1.cs) (VB: [XtraReport1.vb](./VB/ParameterLookUpWindowsFormsApplication/XtraReport1.vb))
+<!-- default file list end -->
 # How to assign multiple values to a report parameter
 
 
