@@ -2,6 +2,9 @@
 Imports DevExpress.XtraReports.UI
 Imports System.Windows.Forms
 Imports System
+Imports System.IO
+Imports DevExpress.DataAccess.ConnectionParameters
+Imports DevExpress.DataAccess.Sql
 
 Namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values
 	Partial Public Class Form1
@@ -12,9 +15,6 @@ Namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values
 		End Sub
 
 		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-			' Create a report instance.
-			Dim report As New XtraReport1()
-
 			' Create a date-time parameter.
 			Dim dateParameter As New Parameter()
 			dateParameter.Name = "dateParameter"
@@ -43,12 +43,31 @@ Namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values
 			' Assign the specified settings to the parameter's ValueSourceSettings property.
 			dateParameter.ValueSourceSettings = lookupSettings
 
-			' Add the parameter to the report's Parameters collection.
+			' Create a report instance and add the parameter
+			' to the report's Parameters collection.
+			Dim report As New XtraReport1()
 			report.Parameters.Add(dateParameter)
 
 			' Use the created parameter to filter the report's data.
 			report.FilterString = "GetDate([OrderDate]) >= ?dateParameter"
+			configureDataSource(report)
 			report.ShowPreview()
+		End Sub
+
+		Private Sub configureDataSource(ByRef report As XtraReport1)
+			Dim projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName
+			Dim databasePath = Path.Combine(projectDirectory, "nwind.db")
+			Dim connectionParameters = New SQLiteConnectionParameters(databasePath, "")
+			Dim dataSource = New SqlDataSource(connectionParameters)
+
+			Dim ordersQuery = New CustomSqlQuery()
+			ordersQuery.Name = "Orders"
+			ordersQuery.Sql = "SELECT * FROM Orders"
+
+			dataSource.Queries.Add(ordersQuery)
+
+			report.DataSource = dataSource
+			report.DataMember = "Orders"
 		End Sub
 	End Class
 End Namespace
