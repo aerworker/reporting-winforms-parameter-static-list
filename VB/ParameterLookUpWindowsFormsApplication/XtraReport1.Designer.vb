@@ -1,5 +1,7 @@
-﻿Namespace ParameterLookUpWindowsFormsApplication
-    Partial Public Class XtraReport1
+Namespace ParameterLookUpWindowsFormsApplication
+
+    Partial Class XtraReport1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,27 +12,27 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Designer generated code"
-
+#Region "Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim tableQuery1 As New DevExpress.DataAccess.Sql.TableQuery()
-            Dim tableInfo1 As New DevExpress.DataAccess.Sql.TableInfo()
-            Dim columnInfo1 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo2 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo3 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo4 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(XtraReport1))
+            Dim tableQuery1 As DevExpress.DataAccess.Sql.TableQuery = New DevExpress.DataAccess.Sql.TableQuery()
+            Dim tableInfo1 As DevExpress.DataAccess.Sql.TableInfo = New DevExpress.DataAccess.Sql.TableInfo()
+            Dim columnInfo1 As DevExpress.DataAccess.Sql.ColumnInfo = New DevExpress.DataAccess.Sql.ColumnInfo()
+            Dim columnInfo2 As DevExpress.DataAccess.Sql.ColumnInfo = New DevExpress.DataAccess.Sql.ColumnInfo()
+            Dim columnInfo3 As DevExpress.DataAccess.Sql.ColumnInfo = New DevExpress.DataAccess.Sql.ColumnInfo()
+            Dim columnInfo4 As DevExpress.DataAccess.Sql.ColumnInfo = New DevExpress.DataAccess.Sql.ColumnInfo()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ParameterLookUpWindowsFormsApplication.XtraReport1))
             Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
             Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
             Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
@@ -38,11 +40,11 @@
             Me.xrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
             Me.xrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
             Me.xrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me), System.ComponentModel.ISupportInitialize).BeginInit()
             ' 
             ' Detail
             ' 
-            Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.xrPictureBox1, Me.xrLabel3, Me.xrLabel1})
+            Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrPictureBox1, Me.xrLabel3, Me.xrLabel1})
             Me.Detail.HeightF = 91.66666F
             Me.Detail.Name = "Detail"
             Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F)
@@ -72,14 +74,14 @@
             columnInfo2.Name = "CategoryName"
             columnInfo3.Name = "Description"
             columnInfo4.Name = "Picture"
-            tableInfo1.SelectedColumns.AddRange(New DevExpress.DataAccess.Sql.ColumnInfo() { columnInfo1, columnInfo2, columnInfo3, columnInfo4})
-            tableQuery1.Tables.AddRange(New DevExpress.DataAccess.Sql.TableInfo() { tableInfo1})
-            Me.sqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() { tableQuery1})
+            tableInfo1.SelectedColumns.AddRange(New DevExpress.DataAccess.Sql.ColumnInfo() {columnInfo1, columnInfo2, columnInfo3, columnInfo4})
+            tableQuery1.Tables.AddRange(New DevExpress.DataAccess.Sql.TableInfo() {tableInfo1})
+            Me.sqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() {tableQuery1})
             Me.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable")
             ' 
             ' xrLabel1
             ' 
-            Me.xrLabel1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Categories.CategoryName")})
+            Me.xrLabel1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Categories.CategoryName")})
             Me.xrLabel1.Font = New System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold)
             Me.xrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(23.95833F, 10.75001F)
             Me.xrLabel1.Name = "xrLabel1"
@@ -90,7 +92,7 @@
             ' 
             ' xrLabel3
             ' 
-            Me.xrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Categories.Description")})
+            Me.xrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Categories.Description")})
             Me.xrLabel3.Font = New System.Drawing.Font("Tahoma", 9.75F)
             Me.xrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(23.95833F, 48.91666F)
             Me.xrLabel3.Name = "xrLabel3"
@@ -101,7 +103,7 @@
             ' 
             ' xrPictureBox1
             ' 
-            Me.xrPictureBox1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Image", Nothing, "Categories.Picture")})
+            Me.xrPictureBox1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Image", Nothing, "Categories.Picture")})
             Me.xrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(507.2917F, 10.75001F)
             Me.xrPictureBox1.Name = "xrPictureBox1"
             Me.xrPictureBox1.SizeF = New System.Drawing.SizeF(119.7917F, 61.16665F)
@@ -109,23 +111,27 @@
             ' 
             ' XtraReport1
             ' 
-            Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() { Me.Detail, Me.TopMargin, Me.BottomMargin})
-            Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() { Me.sqlDataSource1})
+            Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin})
+            Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.sqlDataSource1})
             Me.DataMember = "Categories"
             Me.DataSource = Me.sqlDataSource1
             Me.Version = "15.2"
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
-
+            CType((Me), System.ComponentModel.ISupportInitialize).EndInit()
         End Sub
 
-        #End Region
-
+#End Region
         Private Detail As DevExpress.XtraReports.UI.DetailBand
+
         Private TopMargin As DevExpress.XtraReports.UI.TopMarginBand
+
         Private BottomMargin As DevExpress.XtraReports.UI.BottomMarginBand
+
         Private sqlDataSource1 As DevExpress.DataAccess.Sql.SqlDataSource
+
         Private xrLabel1 As DevExpress.XtraReports.UI.XRLabel
+
         Private xrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
+
         Private xrLabel3 As DevExpress.XtraReports.UI.XRLabel
     End Class
 End Namespace
