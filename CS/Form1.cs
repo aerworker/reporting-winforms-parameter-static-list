@@ -12,10 +12,7 @@ namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values {
             InitializeComponent();
         }
         private void configureDataSource(ref XtraReport1 report) {
-            var projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            var databasePath = Path.Combine(projectDirectory, "nwind.db");
-            var connectionParameters = new SQLiteConnectionParameters(databasePath, "");
-            var dataSource = new SqlDataSource(connectionParameters);
+            var dataSource = new SqlDataSource("nwind");
 
             var ordersQuery = new CustomSqlQuery();
             ordersQuery.Name = "Orders";

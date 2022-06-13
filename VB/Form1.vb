@@ -16,10 +16,7 @@ Namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values
 			InitializeComponent()
 		End Sub
 		Private Sub configureDataSource(ByRef report As XtraReport1)
-			Dim projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName
-			Dim databasePath = Path.Combine(projectDirectory, "nwind.db")
-			Dim connectionParameters = New SQLiteConnectionParameters(databasePath, "")
-			Dim dataSource = New SqlDataSource(connectionParameters)
+			Dim dataSource = New SqlDataSource("nwind")
 
 			Dim ordersQuery = New CustomSqlQuery()
 			ordersQuery.Name = "Orders"
@@ -32,7 +29,7 @@ Namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values
 		End Sub
 
 		Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button1.Click
-'			#Region "dateParameterWithStaticValuesExample"
+#Region "dateParameterWithStaticValuesExample"
 			' Create a date-time parameter.
 			Dim dateParameter As New Parameter()
 			dateParameter.Name = "dateParameter"
@@ -68,7 +65,7 @@ Namespace Reporting_Create_Report_Parameter_with_Predefined_Static_Values
 
 			' Use the created parameter to filter the report's data.
 			report.FilterString = "GetDate([OrderDate]) >= ?dateParameter"
-'			#End Region
+#End Region
 			configureDataSource(report)
 			report.ShowPreview()
 		End Sub
