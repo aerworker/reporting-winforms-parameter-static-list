@@ -7,7 +7,7 @@
 
 This example demonstrates how to create a date report parameter with a list of predefined static values and use this parameter to filter the report's data.
 
-![Report Parameter with a List of Predefined Static Values](images/screenshot.png) 
+![Report Parameter with a List of Predefined Static Values](Images/screenshot.png) 
 
 ## Files to Look At
 
